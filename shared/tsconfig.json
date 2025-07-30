@@ -1,0 +1,37 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "declaration": true,
+    "composite": true,
+    "strictNullChecks": false,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "outDir": "build",
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": true,
+    "baseUrl": "./",
+    "rootDir": ".",
+    "paths": {
+      // "src/*": ["src/*"],
+      "~/*": ["./node_modules"],
+      "assets/*": ["src/assets/*"],
+      "myTypes": ["src/types"],
+      "myTypes/*": ["src/types/*"],
+      "utils/*": ["src/utils/*"],
+      "redux/*": ["src/redux/*"],
+      "components/*": ["src/components/*"],
+      // Je ne sais pas pourquoi @ est nécessaire
+      "@hooks": ["src/hooks/"]
+    }
+  },
+  "include": ["src/**/*"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

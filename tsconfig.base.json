@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      /* Can't be extended, must define path in local tsconfig https://github.com/microsoft/TypeScript/issues/44589*/
+      // "@myTypes/*": ["shared/types/*"],
+      // "@utils/*": ["shared/utils/*"],
+      // "@components/*": ["shared/components/*"]
+    }
+  }
+}
