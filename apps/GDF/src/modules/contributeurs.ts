@@ -1,10 +1,5 @@
-import { CONTRIBUTEURS as sharedCONTRIBUTEURSSource } from '@redux/services/contributeurs'
+import { injectableEndpoints } from '@redux/services/contributeurs'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-
-export const sharedCONTRIBUTEURS = sharedCONTRIBUTEURSSource(
-  import.meta.env.VITE_API,
-  import.meta.env.VITE_API_VERSION
-)
 
 export const CONTRIBUTEURS = createApi({
   reducerPath: 'contributeurs',
@@ -18,7 +13,8 @@ export const CONTRIBUTEURS = createApi({
   }),
 })
 
-export const { useGetContributorDataQuery } = {
-  ...sharedCONTRIBUTEURS,
-  ...CONTRIBUTEURS,
-}
+const CONTRIBUTEURSwithShared = CONTRIBUTEURS.injectEndpoints({
+  endpoints: injectableEndpoints.endpoints,
+})
+
+export const { useGetContributorDataQuery } = CONTRIBUTEURSwithShared
